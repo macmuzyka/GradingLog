@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="BorderPane" fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Controller">
+    <center>
+        <TableView fx:id="allPossibleGradesTable" prefHeight="200.0" prefWidth="515.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn text="Student">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="studentName" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Subject">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="subjectName" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Grade">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="gradeValue" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </center>
+    <right>
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="150.0" spacing="1.0" BorderPane.alignment="CENTER">
+         <Separator prefWidth="200.0" />
+            <Label text="[Pick Student]">
+                <VBox.margin>
+                    <Insets top="5.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Italic" size="12.0" />
+                </font>
+            </Label>
+            <ChoiceBox fx:id="studentChoiceBox" prefWidth="125.0">
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+            </ChoiceBox>
+            <Button fx:id="studentGradesButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#listGivenStudentGrades" prefWidth="125.0" text="Student Grades" textAlignment="CENTER" textFill="#c32626">
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Label text="[Pick Subject]">
+                <font>
+                    <Font name="System Italic" size="12.0" />
+                </font>
+            </Label>
+            <ChoiceBox fx:id="subjectChoiceBox" prefWidth="125.0">
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+            </ChoiceBox>
+            <Button fx:id="studentGradesForSubject" mnemonicParsing="false" onAction="#listSubjectGrades" prefWidth="125.0" text="Subject Grades" textFill="#b89d32">
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Label text="[Pick Student &amp; Subject]">
+                <font>
+                    <Font name="System Italic" size="12.0" />
+                </font>
+            </Label>
+            <Button fx:id="studentSubjectGradesButton" mnemonicParsing="false" onAction="#listGivenStudentGivenSubjectGrades" prefWidth="125.0" text="Show Student Grades for Subject" textAlignment="CENTER" textFill="#27c269" wrapText="true">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Label text="[Pick Student &amp; Subject]" textAlignment="CENTER" wrapText="true">
+                <font>
+                    <Font name="System Italic" size="12.0" />
+                </font>
+            </Label>
+            <Button fx:id="averageButton" mnemonicParsing="false" onAction="#listForAverageStudentSubjectScore" prefWidth="120.0" text="Average Grade" textFill="#2a2cbc" wrapText="true">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="10.0" />
+                </VBox.margin>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <Button mnemonicParsing="false" onAction="#clearAllFields" prefWidth="125.0" text="Clear all fields">
+                <VBox.margin>
+                    <Insets bottom="10.0" top="10.0" />
+                </VBox.margin>
+            </Button>
+            <Separator prefWidth="200.0" />
+            <CheckBox fx:id="enableHandlerCheckBox" mnemonicParsing="false" onAction="#checkedBoxAction" prefWidth="125.0" text="Autofill enabled">
+                <VBox.margin>
+                    <Insets top="90.0" />
+                </VBox.margin>
+            </CheckBox>
+            <CheckBox fx:id="disableAutofillCheckBox" mnemonicParsing="false" onAction="#disableAutofill" prefWidth="125.0" selected="true" text="Autofill disabled">
+                <VBox.margin>
+                    <Insets bottom="3.0" top="3.0" />
+                </VBox.margin>
+            </CheckBox>
+         <Separator prefWidth="200.0">
+            <VBox.margin>
+               <Insets bottom="10.0" />
+            </VBox.margin></Separator>
+        </VBox>
+    </right>
+    <bottom>
+        <HBox alignment="CENTER" maxHeight="50.0" prefHeight="50.0" BorderPane.alignment="CENTER">
+            <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" prefWidth="650.0" progress="0.0">
+                <HBox.margin>
+                    <Insets left="10.0" />
+                </HBox.margin>
+            </ProgressBar>
+            <Button id="all_grades_button" fx:id="allGradesButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#listAllGradesAgain" prefWidth="125.0" text="List all Grades" underline="true">
+                <HBox.margin>
+                    <Insets left="10.0" />
+                </HBox.margin>
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Button>
+            <BorderPane.margin>
+                <Insets right="10.0" />
+            </BorderPane.margin>
+        </HBox>
+    </bottom>
+    <top>
+        <MenuBar id="MenuBar" prefWidth="807.0" BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="File">
+                <MenuItem mnemonicParsing="false" onAction="#addNewStudentDialog" text="Add Student"/>
+                <SeparatorMenuItem/>
+                <MenuItem mnemonicParsing="false" onAction="#addNewSubjectDialog" text="Add Subject"/>
+                <SeparatorMenuItem/>
+                <MenuItem mnemonicParsing="false" onAction="#addStudentSubjectGrade" text="Add Grade"/>
+                <SeparatorMenuItem/>
+                <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+                <MenuItem mnemonicParsing="false" text="Update" onAction="#updateSSG"/>
+                <SeparatorMenuItem/>
+                <MenuItem mnemonicParsing="false" onAction="#deleteSSGRecord" text="Delete"/>
+            </Menu>
+        </MenuBar>
+    </top>
+</BorderPane>
