@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <headerText>
+        Put student name in the text field
+    </headerText>
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <Label alignment="CENTER" minWidth="125.0" text="Pick Student:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <ChoiceBox fx:id="studentChoiceBox" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" minWidth="125.0" text="Pick Subject:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="subjectChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" minWidth="125.0" text="Pick Grade:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="gradeChoiceBox" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </content>
+</DialogPane>
