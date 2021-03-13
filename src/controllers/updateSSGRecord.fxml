@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <headerText>
+        Change desired values
+    </headerText>
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <HBox>
+                <Label prefWidth="70.0" text="Student was:" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <TextField fx:id="oldStudent" editable="false" prefWidth="150.0" />
+                <Label alignment="TOP_LEFT" minWidth="110.0" prefWidth="110.0" text="Pick New Student:">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+                <ChoiceBox fx:id="newStudent" prefWidth="120.0" />
+            <padding>
+               <Insets right="20.0" />
+            </padding>
+            </HBox>
+            <HBox GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Label prefWidth="70.0" text="Subject was:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="oldSubject" editable="false" prefWidth="150.0" />
+                <Label alignment="TOP_LEFT" minWidth="110.0" prefWidth="110.0" text="Pick New Subject:">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+                <ChoiceBox fx:id="newSubject" prefWidth="150.0" />
+            <padding>
+               <Insets right="20.0" />
+            </padding>
+            </HBox>
+            <HBox GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <Label alignment="TOP_LEFT" prefWidth="70.0" text="Grade was:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="oldGrade" editable="false" prefWidth="150.0" />
+                <Label alignment="TOP_LEFT" minWidth="110.0" prefWidth="110.0" text="Pick New Grade:">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+                <ChoiceBox fx:id="newGrade" prefWidth="80.0" />
+            <padding>
+               <Insets right="20.0" />
+            </padding>
+            </HBox>
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </content>
+</DialogPane>
