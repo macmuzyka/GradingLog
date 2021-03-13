@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <headerText>
+        Put student name in the text field
+    </headerText>
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <Label alignment="CENTER" minWidth="125.0" text="Enter New Subject Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="newSubjectTextField" prefWidth="185.0" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <columnConstraints>
+                <ColumnConstraints/>
+                <ColumnConstraints/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints/>
+                <RowConstraints/>
+                <RowConstraints/>
+                <RowConstraints/>
+                <RowConstraints/>
+            </rowConstraints>
+        </GridPane>
+    </content>
+</DialogPane>
+
