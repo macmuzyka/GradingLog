@@ -1,0 +1,9 @@
+#all_grades_button {
+-fx-background-color: skyblue;
+}
+#BorderPane {
+    -fx-background-color: cadetblue;
+}
+#MenuBar {
+    -fx-background-color: cadetblue;
+}
