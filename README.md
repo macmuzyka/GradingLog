@@ -5,6 +5,7 @@ In order for application to work you need to add two external libraries to the p
 
 Java FX 11:
 https://gluonhq.com/products/javafx/
+(include all jar files from lib file except zip file)
 
 SQLite JDBC driver:
 https://jar-download.com/artifacts/org.xerial/sqlite-jdbc/3.20.0/source-code
